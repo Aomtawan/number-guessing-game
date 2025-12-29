@@ -1,4 +1,13 @@
 // filepath: script.js
+// filepath: script.js
+
+// ฟังก์ชันเริ่มเกมใหม่
+function resetGame() {
+  initializeGame(); // เริ่มเกมใหม่
+  document.getElementById("resultContainer").innerHTML = ""; // ล้างผลลัพธ์เก่า
+  document.getElementById("guessInput").value = ""; // ล้างช่อง input
+  document.getElementById("guessInput").focus(); // โฟกัสกลับไปที่ input
+}
 
 function checkGuess() {
   const guessInput = document.getElementById("guessInput");
