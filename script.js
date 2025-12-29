@@ -84,10 +84,19 @@ function checkGuess() {
 // เริ่มเกมเมื่อโหลดหน้า
 window.addEventListener("load", initializeGame);
 
-// เพิ่มการ select text เมื่อคลิก input
+// เพิ่มการ select text เมื่อคลิก input และรองรับ Enter key
 document.addEventListener("DOMContentLoaded", function () {
   const guessInput = document.getElementById("guessInput");
+
+  // select text เมื่อโฟกัส
   guessInput.addEventListener("focus", function () {
     this.select();
+  });
+
+  // รองรับ Enter key
+  guessInput.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      checkGuess();
+    }
   });
 });
